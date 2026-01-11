@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
+
 genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
 
 @app.route('/')
@@ -32,4 +33,5 @@ def generate_video():
         }), 500
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=int(os.getenv('PORT', 5000)))
+    port = int(os.getenv('PORT', 5000))
+    app.run(debug=False, host='0.0.0.0', port=port)
