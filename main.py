@@ -9,8 +9,8 @@ def hello():
 
 @app.route('/api/health')
 def health():
-    return {"status": "ok"}
+    return {"status": "ok"}, 200
 
 if __name__ == '__main__':
-    port = int(os.getenv('PORT', 5000))
+    port = int(os.getenv('PORT', 10000))  # Render يستخدم 10000 وليس 5000!
     app.run(host='0.0.0.0', port=port, debug=False)
