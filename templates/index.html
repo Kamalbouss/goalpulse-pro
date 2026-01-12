@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AION AI - توليد الفيديوهات بالذكاء الاصطناعي</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">🚀 AION AI</div>
+        <nav class="nav-links">
+            <a href="/">الرئيسية</a>
+            <a href="/about">حول</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>AION AI ✨</h1>
+        <p>أقوى منصة لتوليد الفيديوهات بالذكاء الاصطناعي</p>
+        <button class="cta-btn" onclick="scrollToGenerator()">ابدأ الآن</button>
+    </section>
+
+    <section id="video-types" class="video-types">
+        <h2>اختر نوع الفيديو</h2>
+        <div class="types-grid">
+            <div class="type-card" data-type="marketing">
+                <div class="icon">🎯</div>
+                <h3>تسويقي</h3>
+            </div>
+            <div class="type-card" data-type="educational">
+                <div class="icon">📚</div>
+                <h3>تعليمي</h3>
+            </div>
+            <div class="type-card" data-type="funny">
+                <div class="icon">😂</div>
+                <h3>مضحك</h3>
+            </div>
+            <div class="type-card" data-type="motivational">
+                <div class="icon">💪</div>
+                <h3>تحفيزي</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="generator" class="generator">
+        <h2>أنشئ فيديوك الآن</h2>
+        <form id="video-form">
+            <input type="text" id="prompt" placeholder="اكتب موضوع الفيديو..." required>
+            <select id="language">
+                <option value="ar">العربية 🇸🇦</option>
+                <option value="en">English 🇬🇧</option>
+                <option value="fr">Français 🇫🇷</option>
+            </select>
+            <button type="submit" class="generate-btn">توليد الفيديو 🎬</button>
+        </form>
+        <div id="result"></div>
+    </section>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
